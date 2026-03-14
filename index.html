@@ -1,185 +1,204 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-<meta charset="UTF-8">
-<title>Soniacore</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soniacore - T2x2 Giga Clicker</title>
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            overflow-x: hidden;
+        }
 
-  .game {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        header {
+            background: #171a21;
+            padding: 10px 40px;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #66c0f4;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-.game:hover {
-    transform: translateY(-10px); /* Картка підстрибує вгору */
-    box-shadow: 0 10px 20px rgba(102, 192, 244, 0.3);
-}
+        header img { width: 45px; margin-right: 15px; border-radius: 50%; }
 
-button {
-    transition: background 0.2s;
-}
+        .logo { font-size: 26px; color: #66c0f4; font-weight: bold; }
 
-button:hover {
-    background: #46a0d4; /* Колір стає трохи темнішим при наведенні */
-    transform: scale(1.05);
-}
+        nav { margin-left: auto; display: flex; align-items: center; }
 
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-    nav {
-        margin-left: 0;
-        margin-top: 15px;
-    }
-    .hero h1 {
-        font-size: 40px;
-    }
-}
-  
-<title>Soniacore - Офіційний сайт гри T2x2 Giga Clicker</title>
-<meta name="description" content="Грай у Soniacore Giga Clicker! Найкраща гра про кліки, скіни та прокачування. Завантажуй або грай в браузері.">
-<meta name="keywords" content="Soniacore, T2x2, Giga Clicker, гра, клікер, скачати">
+        nav a {
+            color: #c7d5e0;
+            margin-left: 20px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
 
-<style>
+        nav a:hover { color: #66c0f4; }
 
-body{
-margin:0;
-font-family:Arial;
-background:#0f172a;
-color:white;
-}
+        .lang-switch {
+            margin-left: 30px;
+            display: flex;
+            gap: 5px;
+        }
 
-header{
-background:#171a21;
-padding:10px 40px;
-display:flex;
-align-items:center;
-}
+        .lang-btn {
+            background: #2a475e;
+            border: 1px solid #66c0f4;
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 12px;
+        }
 
-header img{
-width:50px;
-margin-right:15px;
-}
+        .lang-btn:hover { background: #66c0f4; color: #171a21; }
 
-.logo{
-font-size:28px;
-color:#66c0f4;
-font-weight:bold;
-}
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+        }
 
-nav{
-margin-left:40px;
-}
+        .hero h1 { font-size: 60px; color: #66c0f4; margin-bottom: 10px; }
 
-nav a{
-color:#c7d5e0;
-margin-right:20px;
-text-decoration:none;
-font-size:18px;
-}
+        .hero button {
+            padding: 15px 40px;
+            font-size: 20px;
+            background: #66c0f4;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-nav a:hover{
-color:white;
-}
+        .hero button:hover { transform: scale(1.1); box-shadow: 0 0 20px #66c0f4; }
 
-.hero{
-text-align:center;
-padding:100px 20px;
-}
+        .games {
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
 
-.hero h1{
-font-size:60px;
-color:#66c0f4;
-}
+        .game {
+            background: #1b2838;
+            padding: 20px;
+            border-radius: 15px;
+            width: 300px;
+            text-align: center;
+            position: relative;
+            border: 1px solid #2a475e;
+        }
 
-.hero button{
-padding:15px 35px;
-font-size:20px;
-background:#66c0f4;
-border:none;
-border-radius:8px;
-cursor:pointer;
-}
+        .demo-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff4b4b;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
 
-.games{
-padding:40px;
-display:flex;
-justify-content:center;
-}
+        .game img { width: 100%; border-radius: 10px; }
 
-.game{
-background:#1b2838;
-padding:20px;
-border-radius:10px;
-width:300px;
-text-align:center;
-}
+        footer {
+            background: #171a21;
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #2a475e;
+        }
 
-.game img{
-width:100%;
-border-radius:10px;
-}
-
-footer{
-background:#171a21;
-text-align:center;
-padding:20px;
-margin-top:50px;
-}
-
-</style>
+        @media (max-width: 768px) {
+            header { flex-direction: column; }
+            nav { margin-top: 15px; }
+        }
+    </style>
 </head>
-
 <body>
 
 <header>
-
-<img src="logo.png">
-
-<div class="logo">Soniacore</div>
-
-<nav>
-<a href="index.html">Головна</a>
-<a href="game.html">Гра</a>
-<a href="about.html">Про нас</a>
-</nav>
-
+    <img src="logo.png">
+    <div class="logo">Soniacore</div>
+    <nav>
+        <a href="index.html" data-key="nav-home">Головна</a>
+        <a href="game.html" data-key="nav-game">Гра</a>
+        <a href="about.html" data-key="nav-about">Про нас</a>
+        <div class="lang-switch">
+            <button class="lang-btn" onclick="changeLang('ua')">UA</button>
+            <button class="lang-btn" onclick="changeLang('en')">EN</button>
+        </div>
+    </nav>
 </header>
 
 <section class="hero">
-
-<h1>Soniacore Studio</h1>
-<p>Ми створюємо круті ігри</p>
-
-<button onclick="location.href='game.html'">
-Дивитися гру
-</button>
-
+    <h1 data-key="hero-title">Soniacore Studio</h1>
+    <p data-key="hero-sub">Ми створюємо круті ігри</p>
+    <button onclick="location.href='game.html'" data-key="hero-btn">Дивитися гру</button>
 </section>
 
 <section class="games">
-
-<div class="game">
-
-<img src="game.png">
-
-<h2>Toha Clicker</h2>
-
-<p>Клікай на персонажа і заробляй монети!</p>
-
-<button onclick="location.href='game.html'">
-Відкрити
-</button>
-
-</div>
-
+    <div class="game">
+        <div class="demo-badge">DEMO</div>
+        <img src="game.png">
+        <h2>T2x2 Giga Clicker</h2>
+        <p data-key="game-desc">Клікай на персонажа і заробляй монети!</p>
+        <button onclick="location.href='game.html'" data-key="game-btn">Відкрити</button>
+    </div>
 </section>
 
 <footer>
-
-© 2026 Soniacore
-
+    <p>© 2026 Soniacore Studio</p>
 </footer>
+
+<script>
+    const translations = {
+        'ua': {
+            'nav-home': 'Головна',
+            'nav-game': 'Гра',
+            'nav-about': 'Про нас',
+            'hero-title': 'Soniacore Studio',
+            'hero-sub': 'Ми створюємо круті ігри',
+            'hero-btn': 'Дивитися гру',
+            'game-desc': 'Клікай на персонажа і заробляй монети!',
+            'game-btn': 'Відкрити'
+        },
+        'en': {
+            'nav-home': 'Home',
+            'nav-game': 'Game',
+            'nav-about': 'About',
+            'hero-title': 'Soniacore Studio',
+            'hero-sub': 'We create cool games',
+            'hero-btn': 'View Game',
+            'game-desc': 'Click on the character and earn coins!',
+            'game-btn': 'Open'
+        }
+    };
+
+    function changeLang(lang) {
+        document.querySelectorAll('[data-key]').forEach(element => {
+            const key = element.getAttribute('data-key');
+            element.innerText = translations[lang][key];
+        });
+        // Зберігаємо вибір мови
+        localStorage.setItem('selectedLang', lang);
+    }
+
+    // Завантаження мови за замовчуванням
+    window.onload = () => {
+        const savedLang = localStorage.getItem('selectedLang') || 'ua';
+        changeLang(savedLang);
+    };
+</script>
 
 </body>
 </html>
