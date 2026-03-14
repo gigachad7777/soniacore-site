@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soniacore - T2x2 Giga Clicker</title>
-    
     <style>
         body {
             margin: 0;
@@ -26,26 +25,12 @@
         }
 
         header img { width: 45px; margin-right: 15px; border-radius: 50%; }
-
         .logo { font-size: 26px; color: #66c0f4; font-weight: bold; }
-
         nav { margin-left: auto; display: flex; align-items: center; }
-
-        nav a {
-            color: #c7d5e0;
-            margin-left: 20px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
+        nav a { color: #c7d5e0; margin-left: 20px; text-decoration: none; transition: 0.3s; }
         nav a:hover { color: #66c0f4; }
 
-        .lang-switch {
-            margin-left: 30px;
-            display: flex;
-            gap: 5px;
-        }
-
+        .lang-switch { margin-left: 30px; display: flex; gap: 5px; }
         .lang-btn {
             background: #2a475e;
             border: 1px solid #66c0f4;
@@ -56,8 +41,6 @@
             font-size: 12px;
         }
 
-        .lang-btn:hover { background: #66c0f4; color: #171a21; }
-
         .hero {
             text-align: center;
             padding: 100px 20px;
@@ -65,63 +48,29 @@
         }
 
         .hero h1 { font-size: 60px; color: #66c0f4; margin-bottom: 10px; }
-
         .hero button {
-            padding: 15px 40px;
-            font-size: 20px;
-            background: #66c0f4;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
+            padding: 15px 40px; font-size: 20px; background: #66c0f4;
+            border: none; border-radius: 50px; cursor: pointer;
+            font-weight: bold; transition: 0.3s;
         }
-
         .hero button:hover { transform: scale(1.1); box-shadow: 0 0 20px #66c0f4; }
 
-        .games {
-            padding: 50px;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-
+        .games { padding: 50px; display: flex; justify-content: center; gap: 30px; }
         .game {
-            background: #1b2838;
-            padding: 20px;
-            border-radius: 15px;
-            width: 300px;
-            text-align: center;
-            position: relative;
-            border: 1px solid #2a475e;
+            background: #1b2838; padding: 20px; border-radius: 15px;
+            width: 300px; text-align: center; position: relative;
+            border: 1px solid #2a475e; transition: 0.3s;
         }
+        .game:hover { transform: translateY(-10px); border-color: #66c0f4; }
 
         .demo-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #ff4b4b;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 12px;
-            text-transform: uppercase;
+            position: absolute; top: 10px; right: 10px;
+            background: #ff4b4b; color: white; padding: 5px 10px;
+            border-radius: 5px; font-weight: bold; font-size: 12px;
         }
 
         .game img { width: 100%; border-radius: 10px; }
-
-        footer {
-            background: #171a21;
-            text-align: center;
-            padding: 30px;
-            border-top: 1px solid #2a475e;
-        }
-
-        @media (max-width: 768px) {
-            header { flex-direction: column; }
-            nav { margin-top: 15px; }
-        }
+        footer { background: #171a21; text-align: center; padding: 30px; border-top: 1px solid #2a475e; }
     </style>
 </head>
 <body>
@@ -163,23 +112,15 @@
 <script>
     const translations = {
         'ua': {
-            'nav-home': 'Головна',
-            'nav-game': 'Гра',
-            'nav-about': 'Про нас',
-            'hero-title': 'Soniacore Studio',
-            'hero-sub': 'Ми створюємо круті ігри',
-            'hero-btn': 'Дивитися гру',
-            'game-desc': 'Клікай на персонажа і заробляй монети!',
+            'nav-home': 'Головна', 'nav-game': 'Гра', 'nav-about': 'Про нас',
+            'hero-title': 'Soniacore Studio', 'hero-sub': 'Ми створюємо круті ігри',
+            'hero-btn': 'Дивитися гру', 'game-desc': 'Клікай на персонажа і заробляй монети!',
             'game-btn': 'Відкрити'
         },
         'en': {
-            'nav-home': 'Home',
-            'nav-game': 'Game',
-            'nav-about': 'About',
-            'hero-title': 'Soniacore Studio',
-            'hero-sub': 'We create cool games',
-            'hero-btn': 'View Game',
-            'game-desc': 'Click on the character and earn coins!',
+            'nav-home': 'Home', 'nav-game': 'Game', 'nav-about': 'About',
+            'hero-title': 'Soniacore Studio', 'hero-sub': 'We create cool games',
+            'hero-btn': 'View Game', 'game-desc': 'Click on the character and earn coins!',
             'game-btn': 'Open'
         }
     };
@@ -189,11 +130,9 @@
             const key = element.getAttribute('data-key');
             element.innerText = translations[lang][key];
         });
-        // Зберігаємо вибір мови
         localStorage.setItem('selectedLang', lang);
     }
 
-    // Завантаження мови за замовчуванням
     window.onload = () => {
         const savedLang = localStorage.getItem('selectedLang') || 'ua';
         changeLang(savedLang);
