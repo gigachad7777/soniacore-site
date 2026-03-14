@@ -2,64 +2,112 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Toha Clicker</title>
 
 <style>
-
-body{
-margin:0;
-font-family:Arial;
-background:#0f172a;
-color:white;
-text-align:center;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+    text-align: center;
 }
 
-header{
-background:#171a21;
-padding:10px 40px;
-display:flex;
-align-items:center;
+header {
+    background: #171a21;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column; /* На телефонах лого і меню будуть одне під одним */
+    align-items: center;
 }
 
-header img{
-width:50px;
-margin-right:15px;
+header img {
+    width: 50px;
+    margin-bottom: 10px;
 }
 
-.logo{
-font-size:28px;
-color:#66c0f4;
-font-weight:bold;
+.logo {
+    font-size: 24px;
+    color: #66c0f4;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-nav{
-margin-left:40px;
+nav {
+    display: flex;
+    flex-wrap: wrap; /* Якщо посилання не влазять в рядок, вони перенесуться */
+    justify-content: center;
+    gap: 15px;
 }
 
-nav a{
-color:#c7d5e0;
-margin-right:20px;
-text-decoration:none;
-font-size:18px;
+nav a {
+    color: #c7d5e0;
+    text-decoration: none;
+    font-size: 16px;
 }
 
-nav a:hover{
-color:white;
+nav a:hover {
+    color: white;
 }
 
-.game{
-padding:100px 20px;
+.game {
+    padding: 40px 20px;
 }
 
-button{
-padding:15px 30px;
-font-size:18px;
-background:#66c0f4;
-border:none;
-border-radius:8px;
-cursor:pointer;
+.game h1 {
+    font-size: 28px;
 }
 
+/* Робимо картинку гнучкою, щоб вона не вилазила за межі екрана */
+.game img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%; /* Кнопка на всю ширину на маленьких екранах */
+    max-width: 300px;
+    padding: 15px;
+    font-size: 18px;
+    background: #66c0f4;
+    color: #0f172a;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Налаштування для комп'ютерів (екрани більше 768px) */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row; /* Повертаємо в рядок */
+        justify-content: flex-start;
+        padding: 10px 40px;
+    }
+    
+    header img {
+        margin-right: 15px;
+        margin-bottom: 0;
+    }
+    
+    .logo {
+        margin-bottom: 0;
+    }
+    
+    nav {
+        margin-left: 40px;
+    }
+    
+    .game {
+        padding: 80px 20px;
+    }
+    
+    .game img {
+        width: 400px;
+    }
+}
 </style>
 
 </head>
@@ -67,31 +115,20 @@ cursor:pointer;
 <body>
 
 <header>
-
-<img src="logo.png">
-
-<div class="logo">Soniacore</div>
-
-<nav>
-<a href="index.html">Головна</a>
-<a href="game.html">Гра</a>
-<a href="about.html">Про нас</a>
-</nav>
-
+    <img src="logo.png" alt="Logo">
+    <div class="logo">Soniacore</div>
+    <nav>
+        <a href="index.html">Головна</a>
+        <a href="game.html">Гра</a>
+        <a href="about.html">Про нас</a>
+    </nav>
 </header>
 
 <div class="game">
-
-<h1>Toha Clicker</h1>
-
-<img src="game.png" width="400">
-
-<p>Натискай на персонажа та заробляй монети.</p>
-
-<button>
-Завантажити гру
-</button>
-
+    <h1>Toha Clicker</h1>
+    <img src="game.png" alt="Toha Clicker Gameplay">
+    <p>Натискай на персонажа та заробляй монети.</p>
+    <button>Завантажити гру</button>
 </div>
 
 </body>
