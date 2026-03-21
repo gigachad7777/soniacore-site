@@ -1,117 +1,120 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Toha Clicker</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toha Clicker - Завантажити</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: white;
-    text-align: center;
-}
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+        }
 
-header {
-    background: #171a21;
-    padding: 15px 20px;
-    display: flex;
-    flex-direction: column; /* На телефонах лого і меню будуть одне під одним */
-    align-items: center;
-}
+        header {
+            background: #171a21;
+            padding: 15px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-header img {
-    width: 50px;
-    margin-bottom: 10px;
-}
+        header img {
+            width: 50px;
+            margin-bottom: 10px;
+        }
 
-.logo {
-    font-size: 24px;
-    color: #66c0f4;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
+        .logo {
+            font-size: 24px;
+            color: #66c0f4;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
-nav {
-    display: flex;
-    flex-wrap: wrap; /* Якщо посилання не влазять в рядок, вони перенесуться */
-    justify-content: center;
-    gap: 15px;
-}
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
 
-nav a {
-    color: #c7d5e0;
-    text-decoration: none;
-    font-size: 16px;
-}
+        nav a {
+            color: #c7d5e0;
+            text-decoration: none;
+            font-size: 16px;
+        }
 
-nav a:hover {
-    color: white;
-}
+        nav a:hover {
+            color: white;
+        }
 
-.game {
-    padding: 40px 20px;
-}
+        .game {
+            padding: 40px 20px;
+        }
 
-.game h1 {
-    font-size: 28px;
-}
+        .game h1 {
+            font-size: 28px;
+        }
 
-/* Робимо картинку гнучкою, щоб вона не вилазила за межі екрана */
-.game img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-}
+        .game img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
 
-button {
-    width: 100%; /* Кнопка на всю ширину на маленьких екранах */
-    max-width: 300px;
-    padding: 15px;
-    font-size: 18px;
-    background: #66c0f4;
-    color: #0f172a;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-}
+        /* Стиль для кнопки-посилання */
+        .download-btn {
+            display: inline-block;
+            width: 100%;
+            max-width: 300px;
+            padding: 15px;
+            font-size: 18px;
+            background: #66c0f4;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
 
-/* Налаштування для комп'ютерів (екрани більше 768px) */
-@media (min-width: 768px) {
-    header {
-        flex-direction: row; /* Повертаємо в рядок */
-        justify-content: flex-start;
-        padding: 10px 40px;
-    }
-    
-    header img {
-        margin-right: 15px;
-        margin-bottom: 0;
-    }
-    
-    .logo {
-        margin-bottom: 0;
-    }
-    
-    nav {
-        margin-left: 40px;
-    }
-    
-    .game {
-        padding: 80px 20px;
-    }
-    
-    .game img {
-        width: 400px;
-    }
-}
-</style>
+        .download-btn:hover {
+            background: #4fa8db;
+        }
 
+        @media (min-width: 768px) {
+            header {
+                flex-direction: row;
+                justify-content: flex-start;
+                padding: 10px 40px;
+            }
+            
+            header img {
+                margin-right: 15px;
+                margin-bottom: 0;
+            }
+            
+            .logo {
+                margin-bottom: 0;
+            }
+            
+            nav {
+                margin-left: 40px;
+            }
+            
+            .game {
+                padding: 80px 20px;
+            }
+            
+            .game img {
+                width: 400px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
 <header>
@@ -128,7 +131,10 @@ button {
     <h1>Toha Clicker</h1>
     <img src="game.png" alt="Toha Clicker Gameplay">
     <p>Натискай на персонажа та заробляй монети.</p>
-    <button>Завантажити гру</button>
+    
+    <a href="T2x2 Clicker" download="T2x2_Clicker.exe" class="download-btn">
+        Завантажити гру
+    </a>
 </div>
 
 </body>
